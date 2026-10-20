@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Project 2 Report</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <p><strong>Thinh Do</strong> — <em>YOUR_EMAIL@ucsd.edu</em><br>
+            <strong>Member 2</strong> — <em>EMAIL@ucsd.edu</em><br>
+            <strong>Member 3</strong> — <em>EMAIL@ucsd.edu</em></p>
+        </header>
+
+        <main>
+            <h2>Proposition: Extreme poverty is becoming a problem of the past</h2>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img src="chart_for.png" alt="Line chart: share of world population under $1.90/day fell from 42.7% in 1981 to 9.3% in 2017." style="max-width:100%;height:auto" />
+                    <figcaption>The world crosses into single digits: share of the global population living under $1.90/day, 1981–2017. Source: World Bank poverty headcount ratio (2011 PPP), via light-and-salt/World-Bank-Data-by-Indicators.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li><strong>[+2] Full 1981–2017 world time series.</strong> We plotted every available year for the world aggregate with no interpolation or invented years, so the decline is genuine and checkable against the source.</li>
+                    <li><strong>[+1] Zero-baseline line with a soft area fill.</strong> Starting the y-axis at 0% keeps the drop proportionally honest, and the filled area makes the shrinking share feel tangible.</li>
+                    <li><strong>[+1] Direct start/end labels (42.7% → 9.3%).</strong> Large annotations at the endpoints let readers grasp the magnitude instantly without reading the axis.</li>
+                    <li><strong>[-1] Headline framed around the milestone, not the people still poor.</strong> "Crosses into single digits" celebrates the percentage and hides that 9.3% is still roughly 700 million people.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img src="chart_against.png" alt="Line chart: share of Sub-Saharan Africa under $1.90/day went from 55.1% in 1990 to 40.4% in 2018." style="max-width:100%;height:auto" />
+                    <figcaption>Four in ten still face extreme poverty: share of Sub-Saharan Africa living under $1.90/day, 1990–2018. Same source and threshold as Figure 1.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li><strong>[-1] Focus on Sub-Saharan Africa instead of the global mean.</strong> Choosing the region with the most persistent poverty reframes the question from "is the world improving?" to "who is being left behind?"</li>
+                    <li><strong>[+2] Keep the historical decline and a zero baseline.</strong> We did not truncate the axis or hide the 1990s; the real (slower) improvement is visible, which makes the chart more credible.</li>
+                    <li><strong>[-0.5] Oversized red 40.4% label.</strong> The largest, most saturated element is the remaining hardship, steering attention to the end value rather than the trend.</li>
+                    <li><strong>[+1] Same $1.90 threshold as the supporting chart.</strong> Using an identical definition makes the two charts directly comparable, so the disagreement comes from emphasis, not redefined terms.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+
+                <p>[DRAFT — edit in your group's voice] The most striking part of this project was that we never needed to fabricate or distort data to tell two opposing stories. Both visualizations use the same World Bank file, the same $1.90 threshold, and honest zero baselines. The persuasion came almost entirely from scope (world vs. one region), framing (headline and title wording), and emphasis (which number is largest and most saturated). Building the "for" chart was straightforward because the global trend is dramatic; the "against" chart was harder because we had to resist techniques like truncating the axis, which would have exaggerated the stagnation but been easy to catch.</p>
+                <p>We were surprised by how much a single choice of aggregation changed the conclusion. The global average is pulled down sharply by East Asia, while Sub-Saharan Africa declined slowly enough that the number of people in extreme poverty there barely fell. Neither chart is false, yet a reader who sees only one walks away with a very different belief about the world.</p>
+                <p>We now think of ethical visualization as being transparent about the choices that shape the conclusion, not just avoiding false numbers. A persuasive choice is acceptable when a reader could discover it from the chart itself (labeled region, labeled threshold, clear source) and would still find the claim reasonable. It becomes misleading when the choice is hidden or when it implies a broader claim than the data supports, for example presenting one region as "the world" or quietly switching poverty lines. The boundary is blurry, which is why disclosure matters more than any single rule.</p>
+            </section>
+        </main>
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
