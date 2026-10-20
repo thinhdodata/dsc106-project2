@@ -1,205 +1,283 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="DSC 106 Project 2 report: how choices in scope and framing shape visual stories about extreme poverty.">
-        <title>Extreme Poverty: Progress and Unevenness | DSC 106 Project 2</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            :root {
-                --color-neutral-95: hsl(220 10% 95%);
-                --color-neutral-90: hsl(220 10% 90%);
-                --color-neutral-80: hsl(220 10% 80%);
-                --color-neutral-70: hsl(220 10% 70%);
-                --color-neutral-60: hsl(220 10% 60%);
-                --color-neutral-50: hsl(220 10% 50%);
-                --color-neutral-40: hsl(220 10% 40%);
-                --color-neutral-30: hsl(220 10% 30%);
-                --color-neutral-20: hsl(220 10% 20%);
-                --color-neutral-10: hsl(220 10% 10%);
-            }
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="DSC 106 Project 2 report: how choices in scope and framing shape visual stories about extreme poverty."
+    />
+    <title>Extreme Poverty: Progress and Unevenness | DSC 106 Project 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
 
-            html {
-                font: 100%/1.5 system-ui;
-                counter-reset: figure;
-                background: var(--color-neutral-95);
-                max-width: min(75vw, 80em);
-                margin: 0 auto;
-            }
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
 
-            /* Headings */
+      /* Headings */
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                line-height: 1.1;
-                font-weight: 600;
-                text-wrap: balance;
-            }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
 
-            h1,
-            h2 {
-                border-bottom: 1px solid var(--color-neutral-80);
-                padding-bottom: 0.2em;
-            }
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
 
-            h1 {
-                margin-block: 1em 0.5rem;
-                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
-                font-weight: 800;
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
 
-                small {
-                    display: block;
-                    width: fit-content;
-                    padding: 0.2em 0.5em;
-                    margin-inline: auto;
-                    color: white;
-                    background: var(--color-neutral-40);
-                    font-size: 40%;
-                    text-transform: uppercase;
-                    white-space: nowrap;
-                }
-            }
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
 
-            h2 {
-                font-size: 180%;
-                color: var(--color-neutral-30);
-            }
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
 
-            h3 {
-                font-size: 130%;
-            }
+      h3 {
+        font-size: 130%;
+      }
 
-            /* Lists */
+      /* Lists */
 
-            ul,
-            ol {
-                padding-inline-start: 2em;
-            }
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
 
-            li {
-                &::marker {
-                    color: var(--color-neutral-40);
-                }
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
 
-                + li {
-                    margin-top: 0.2em;
-                }
-            }
+        + li {
+          margin-top: 0.2em;
+        }
+      }
 
-            /* Sectioning elements */
+      /* Sectioning elements */
 
-            header {
-                padding-block: 1em;
-                text-align: center;
-            }
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
 
-            main {
-                background: white;
-                color: var(--color-neutral-20);
-                border-radius: 1rem;
-                padding: 0.1rem 2rem;
-            }
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
 
-            /* Figures */
+      /* Figures */
 
-            figure {
-                margin: 1em 0;
-                padding: 0.5rem;
-                margin-inline: -0.5em;
-                border: 1px solid var(--color-neutral-80);
-                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
-                text-align: center;
-                background: white;
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
 
-                > figcaption {
-                    font: 500 75% var(--font-sans);
-                    background: var(--color-neutral-95);
-                    padding: 0.5rem;
-                    margin: -0.5rem;
-                    margin-top: 0.5rem;
-                    counter-increment: figure;
-                    text-align: left;
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
 
-                    &::before {
-                        content: "Figure " counter(figure) ": ";
-                        font-weight: bold;
-                        color: var(--color-neutral-40);
-                    }
+          &::before {
+            content: "Figure " counter(figure) ": ";
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
 
-                    a:not(:hover, :focus, :active) {
-                        color: inherit;
-                        text-decoration: underline;
-                        text-decoration-color: color-mix(
-                            in lab,
-                            currentColor,
-                            transparent 70%
-                        );
-                    }
-                }
-            }
-        </style>
-    </head>
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
 
-    <body>
-        <header>
-            <h1>
-                <small>DSC 106 · Project 2</small>
-                Persuasive or Deceptive Visualization?
-            </h1>
+  <body>
+    <header>
+      <h1>
+        <small>DSC 106 · Project 2</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
 
-            <p><strong>Andrew Xia</strong> — <a href="mailto:arxia@ucsd.edu">arxia@ucsd.edu</a><br>
-            <strong>Eugene Bertrand</strong> — <a href="mailto:esbertrand@ucsd.edu">esbertrand@ucsd.edu</a><br>
-            <strong>Thinh Duy Do</strong> — <a href="mailto:tdd002@ucsd.edu">tdd002@ucsd.edu</a></p>
-        </header>
+      <p>
+        <strong>Andrew Xia</strong> —
+        <a href="mailto:arxia@ucsd.edu">arxia@ucsd.edu</a><br />
+        <strong>Eugene Bertrand</strong> —
+        <a href="mailto:esbertrand@ucsd.edu">esbertrand@ucsd.edu</a><br />
+        <strong>Thinh Duy Do</strong> —
+        <a href="mailto:tdd002@ucsd.edu">tdd002@ucsd.edu</a>
+      </p>
+    </header>
 
-        <main>
-            <h2>Proposition: Extreme poverty is becoming a problem of the past.</h2>
+    <main>
+      <h2>Proposition: Extreme poverty is becoming a problem of the past.</h2>
 
-            <section>
-                <h3>FOR the Proposition: Poverty Has Fallen Dramatically</h3>
+      <section>
+        <h3>FOR the Proposition: Poverty Has Fallen Dramatically</h3>
 
-                <figure>
-                    <img src="chart_viz1.png" alt="Line and area chart showing the worldwide share of people below $1.90 a day falling from 42.7% in 1981 to 9.3% in 2017, crossing a dashed 10% threshold." style="max-width:100%;height:auto">
-                    <figcaption>Visualization 1 — The worldwide share below $1.90 per day fell from 42.7% in 1981 to 9.3% in 2017. The dashed 10% line frames the endpoint as a milestone. Source: World Bank poverty indicators, poverty.csv, using the historical $1.90/day line in 2011 PPP.</figcaption>
-                </figure>
+        <figure>
+          <img
+            src="chart_viz1.png"
+            alt="Line and area chart showing the worldwide share of people below $1.90 a day falling from 42.7% in 1981 to 9.3% in 2017, crossing a dashed 10% threshold."
+            style="max-width: 100%; height: auto"
+          />
+          <figcaption>
+            Visualization 1 — The worldwide share below $1.90 per day fell from
+            42.7% in 1981 to 9.3% in 2017. The dashed 10% line frames the
+            endpoint as a milestone. Source: World Bank poverty indicators,
+            poverty.csv, using the historical $1.90/day line in 2011 PPP.
+          </figcaption>
+        </figure>
 
-                <h4>Design Decisions and Rationale</h4>
-                <ul>
-                    <li><strong>Full global time series and a zero-based scale.</strong> Showing the annual trajectory from 1981 through 2017 makes the long-term decline visible without truncating the vertical axis.</li>
-                    <li><strong>Area fill and direct endpoint labels.</strong> The shaded area gives the decline visual weight, while the 42.7% and 9.3% labels make the start-to-end change easy to read.</li>
-                    <li><strong>10% threshold and “single digits” framing.</strong> The reference line and headline turn 9.3% into a clear achievement. That is persuasive, but the 10% cutoff is a chosen milestone—not a data-defined boundary between success and failure—and the framing can understate the hardship that remains.</li>
-                    <li><strong>Global aggregation.</strong> The worldwide average supports the broad proposition, but it can conceal large differences between regions.</li>
-                </ul>
-            </section>
+        <h4>Design Decisions and Rationale</h4>
+        <ul>
+          <li>
+            <strong>Full global time series and a zero-based scale.</strong>
+            Showing the annual trajectory from 1981 through 2017 makes the
+            long-term decline visible without truncating the vertical axis.
+          </li>
+          <li>
+            <strong>Area fill and direct endpoint labels.</strong> The shaded
+            area gives the decline visual weight, while the 42.7% and 9.3%
+            labels make the start-to-end change easy to read.
+          </li>
+          <li>
+            <strong>10% threshold and “single digits” framing.</strong> The
+            reference line and headline turn 9.3% into a clear achievement. That
+            is persuasive, but the 10% cutoff is a chosen milestone—not a
+            data-defined boundary between success and failure—and the framing
+            can understate the hardship that remains.
+          </li>
+          <li>
+            <strong>Global aggregation.</strong> The worldwide average supports
+            the broad proposition, but it can conceal large differences between
+            regions.
+          </li>
+        </ul>
+      </section>
 
-            <section>
-                <h3>AGAINST the Proposition: Progress Leaves People Behind</h3>
+      <section>
+        <h3>AGAINST the Proposition: Progress Leaves People Behind</h3>
 
-                <figure>
-                    <img src="chart_viz4.png" alt="Paired horizontal bars compare 1990 and 2017 extreme-poverty rates across regions. Sub-Saharan Africa remains highest, declining from 55.1% to 41.2%; the world reference falls from 36.2% to 9.3%." style="max-width:100%;height:auto">
-                    <figcaption>Visualization 4 — Regional poverty headcount rates in 1990 and 2017. Sub-Saharan Africa declined from 55.1% to 41.2%, while the world reference fell from 36.2% to 9.3%. South Asia has no 2017 value in this dataset. Source: World Bank poverty indicators, poverty.csv, using the historical $1.90/day line in 2011 PPP.</figcaption>
-                </figure>
+        <figure>
+          <img
+            src="chart_viz4.png"
+            alt="Paired horizontal bars compare 1990 and 2017 extreme-poverty rates across regions. Sub-Saharan Africa remains highest, declining from 55.1% to 41.2%; the world reference falls from 36.2% to 9.3%."
+            style="max-width: 100%; height: auto"
+          />
+          <figcaption>
+            Visualization 4 — Regional poverty headcount rates in 1990 and 2017.
+            Sub-Saharan Africa declined from 55.1% to 41.2%, while the world
+            reference fell from 36.2% to 9.3%. South Asia has no 2017 value in
+            this dataset. Source: World Bank poverty indicators, poverty.csv,
+            using the historical $1.90/day line in 2011 PPP.
+          </figcaption>
+        </figure>
 
-                <h4>Design Decisions and Rationale</h4>
-                <ul>
-                    <li><strong>Paired bars on a shared zero-based scale.</strong> Encoding both years with bar lengths makes the difference between endpoints comparable across regions without exaggerating it with a truncated axis.</li>
-                    <li><strong>Put Sub-Saharan Africa first and retain the world reference.</strong> The ordering foregrounds the region with the highest measured 2017 rate, while the global row makes clear that this is an uneven-progress argument, not evidence that the world rate did not fall.</li>
-                    <li><strong>Show only 1990 and 2017.</strong> The endpoint comparison highlights the remaining gap but hides the intervening path and pace of change. This selective time framing can make progress seem more stagnant than a full time series would.</li>
-                    <li><strong>Include regional labels, values, and the missing-data note.</strong> Direct labels aid comparison, and noting unavailable South Asia data avoids implying that every region has a complete pair.</li>
-                </ul>
-            </section>
+        <h4>Design Decisions and Rationale</h4>
+        <ul>
+          <li>
+            <strong>Paired bars on a shared zero-based scale.</strong> Encoding
+            both years with bar lengths makes the difference between endpoints
+            comparable across regions without exaggerating it with a truncated
+            axis.
+          </li>
+          <li>
+            <strong
+              >Put Sub-Saharan Africa first and retain the world
+              reference.</strong
+            >
+            The ordering foregrounds the region with the highest measured 2017
+            rate, while the global row makes clear that this is an
+            uneven-progress argument, not evidence that the world rate did not
+            fall.
+          </li>
+          <li>
+            <strong>Show only 1990 and 2017.</strong> The endpoint comparison
+            highlights the remaining gap but hides the intervening path and pace
+            of change. This selective time framing can make progress seem more
+            stagnant than a full time series would.
+          </li>
+          <li>
+            <strong
+              >Include regional labels, values, and the missing-data
+              note.</strong
+            >
+            Direct labels aid comparison, and noting unavailable South Asia data
+            avoids implying that every region has a complete pair.
+          </li>
+        </ul>
+      </section>
 
-            <section>
-                <h2>Final Reflection</h2>
-
-                <p>These two visualizations support opposing impressions without changing the underlying poverty measure. Visualization 1 follows the global rate over time and makes its fall—from 42.7% to 9.3%—the central story. Visualization 4 instead compares selected regional endpoints: it shows real declines, but directs attention to Sub-Saharan Africa’s still-high 41.2% rate and to the difference between that region and the global reference. The contrast comes from scope and time framing, not from a different poverty threshold.</p>
-                <p>The choices that make each chart persuasive also define its limits. A global average can conceal who is being left behind, and a pair of endpoints cannot show the pace or fluctuations between them. Conversely, the “single digits” milestone in the global chart is memorable but arbitrary; falling below 10% does not mean extreme poverty is solved. The regional chart also has an explicit gap: South Asia has no 2017 value in this dataset.</p>
-                <p>We learned that ethical visualization requires more than accurate marks: it requires making the scope, definitions, and omissions legible. Both charts identify the $1.90/day line and their populations and periods, and both use zero-based scales. Still, their headlines and selection choices invite different conclusions. We would pair either framing with the other and explain the limits, so readers can distinguish substantial global progress from the fact that progress has been uneven and severe poverty remains.</p>
-            </section>
-        </main>
-    </body>
+      <section>
+        <h2>Final Reflection</h2>
+        <p>
+          Throughout Project 2, we learned that ethical visualization requires
+          more than accurate marks: it requires making the scope and definitions
+          clear. Both charts identify the $1.90/day line, their populations, and
+          their time periods, and both use zero-based scales. Even so, their
+          headlines and selection choices lead readers toward different
+          conclusions. We recommend pairing either framing with the other and
+          explaining its limits, which helps readers distinguish substantial
+          global progress from the fact that progress has been uneven and severe
+          poverty remains.
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
