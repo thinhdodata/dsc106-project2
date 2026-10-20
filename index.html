@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Project 2 Report</title>
+        <meta charset="utf-8">
+        <meta name="description" content="DSC 106 Project 2 report: how choices in scope and framing shape visual stories about extreme poverty.">
+        <title>Extreme Poverty: Progress and Unevenness | DSC 106 Project 2</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             :root {
@@ -145,62 +147,59 @@
     <body>
         <header>
             <h1>
-                <small>Project 2</small>
+                <small>DSC 106 · Project 2</small>
                 Persuasive or Deceptive Visualization?
             </h1>
 
-            <p><strong>Thinh Do</strong> — <em>YOUR_EMAIL@ucsd.edu</em><br>
-            <strong>Member 2</strong> — <em>EMAIL@ucsd.edu</em><br>
-            <strong>Member 3</strong> — <em>EMAIL@ucsd.edu</em></p>
+            <p><strong>Andrew Xia</strong> — <a href="mailto:arxia@ucsd.edu">arxia@ucsd.edu</a><br>
+            <strong>Eugene Bertrand</strong> — <a href="mailto:esbertrand@ucsd.edu">esbertrand@ucsd.edu</a><br>
+            <strong>Thinh Duy Do</strong> — <a href="mailto:tdd002@ucsd.edu">tdd002@ucsd.edu</a></p>
         </header>
 
         <main>
-            <h2>Proposition: Extreme poverty is becoming a problem of the past</h2>
+            <h2>Proposition: Extreme poverty is becoming a problem of the past.</h2>
 
             <section>
-                <h3>FOR the Proposition</h3>
+                <h3>FOR the Proposition: Poverty Has Fallen Dramatically</h3>
 
                 <figure>
-                    <img src="chart_for.png" alt="Line chart: share of world population under $1.90/day fell from 42.7% in 1981 to 9.3% in 2017." style="max-width:100%;height:auto" />
-                    <figcaption>The world crosses into single digits: share of the global population living under $1.90/day, 1981–2017. Source: World Bank poverty headcount ratio (2011 PPP), via light-and-salt/World-Bank-Data-by-Indicators.</figcaption>
+                    <img src="chart_viz1.png" alt="Line and area chart showing the worldwide share of people below $1.90 a day falling from 42.7% in 1981 to 9.3% in 2017, crossing a dashed 10% threshold." style="max-width:100%;height:auto">
+                    <figcaption>Visualization 1 — The worldwide share below $1.90 per day fell from 42.7% in 1981 to 9.3% in 2017. The dashed 10% line frames the endpoint as a milestone. Source: World Bank poverty indicators, poverty.csv, using the historical $1.90/day line in 2011 PPP.</figcaption>
                 </figure>
 
-                <p>Design Decisions and Rationale:</p>
-
+                <h4>Design Decisions and Rationale</h4>
                 <ul>
-                    <li><strong>[+2] Full 1981–2017 world time series.</strong> We plotted every available year for the world aggregate with no interpolation or invented years, so the decline is genuine and checkable against the source.</li>
-                    <li><strong>[+1] Zero-baseline line with a soft area fill.</strong> Starting the y-axis at 0% keeps the drop proportionally honest, and the filled area makes the shrinking share feel tangible.</li>
-                    <li><strong>[+1] Direct start/end labels (42.7% → 9.3%).</strong> Large annotations at the endpoints let readers grasp the magnitude instantly without reading the axis.</li>
-                    <li><strong>[-1] Headline framed around the milestone, not the people still poor.</strong> "Crosses into single digits" celebrates the percentage and hides that 9.3% is still roughly 700 million people.</li>
+                    <li><strong>Full global time series and a zero-based scale.</strong> Showing the annual trajectory from 1981 through 2017 makes the long-term decline visible without truncating the vertical axis.</li>
+                    <li><strong>Area fill and direct endpoint labels.</strong> The shaded area gives the decline visual weight, while the 42.7% and 9.3% labels make the start-to-end change easy to read.</li>
+                    <li><strong>10% threshold and “single digits” framing.</strong> The reference line and headline turn 9.3% into a clear achievement. That is persuasive, but the 10% cutoff is a chosen milestone—not a data-defined boundary between success and failure—and the framing can understate the hardship that remains.</li>
+                    <li><strong>Global aggregation.</strong> The worldwide average supports the broad proposition, but it can conceal large differences between regions.</li>
                 </ul>
             </section>
 
             <section>
-                <h3>AGAINST the Proposition</h3>
+                <h3>AGAINST the Proposition: Progress Leaves People Behind</h3>
 
                 <figure>
-                    <img src="chart_against.png" alt="Line chart: share of Sub-Saharan Africa under $1.90/day went from 55.1% in 1990 to 40.4% in 2018." style="max-width:100%;height:auto" />
-                    <figcaption>Four in ten still face extreme poverty: share of Sub-Saharan Africa living under $1.90/day, 1990–2018. Same source and threshold as Figure 1.</figcaption>
+                    <img src="chart_viz4.png" alt="Paired horizontal bars compare 1990 and 2017 extreme-poverty rates across regions. Sub-Saharan Africa remains highest, declining from 55.1% to 41.2%; the world reference falls from 36.2% to 9.3%." style="max-width:100%;height:auto">
+                    <figcaption>Visualization 4 — Regional poverty headcount rates in 1990 and 2017. Sub-Saharan Africa declined from 55.1% to 41.2%, while the world reference fell from 36.2% to 9.3%. South Asia has no 2017 value in this dataset. Source: World Bank poverty indicators, poverty.csv, using the historical $1.90/day line in 2011 PPP.</figcaption>
                 </figure>
 
-                <p>Design Decisions and Rationale:</p>
-
+                <h4>Design Decisions and Rationale</h4>
                 <ul>
-                    <li><strong>[-1] Focus on Sub-Saharan Africa instead of the global mean.</strong> Choosing the region with the most persistent poverty reframes the question from "is the world improving?" to "who is being left behind?"</li>
-                    <li><strong>[+2] Keep the historical decline and a zero baseline.</strong> We did not truncate the axis or hide the 1990s; the real (slower) improvement is visible, which makes the chart more credible.</li>
-                    <li><strong>[-0.5] Oversized red 40.4% label.</strong> The largest, most saturated element is the remaining hardship, steering attention to the end value rather than the trend.</li>
-                    <li><strong>[+1] Same $1.90 threshold as the supporting chart.</strong> Using an identical definition makes the two charts directly comparable, so the disagreement comes from emphasis, not redefined terms.</li>
+                    <li><strong>Paired bars on a shared zero-based scale.</strong> Encoding both years with bar lengths makes the difference between endpoints comparable across regions without exaggerating it with a truncated axis.</li>
+                    <li><strong>Put Sub-Saharan Africa first and retain the world reference.</strong> The ordering foregrounds the region with the highest measured 2017 rate, while the global row makes clear that this is an uneven-progress argument, not evidence that the world rate did not fall.</li>
+                    <li><strong>Show only 1990 and 2017.</strong> The endpoint comparison highlights the remaining gap but hides the intervening path and pace of change. This selective time framing can make progress seem more stagnant than a full time series would.</li>
+                    <li><strong>Include regional labels, values, and the missing-data note.</strong> Direct labels aid comparison, and noting unavailable South Asia data avoids implying that every region has a complete pair.</li>
                 </ul>
             </section>
 
             <section>
                 <h2>Final Reflection</h2>
 
-                <p>[DRAFT — edit in your group's voice] The most striking part of this project was that we never needed to fabricate or distort data to tell two opposing stories. Both visualizations use the same World Bank file, the same $1.90 threshold, and honest zero baselines. The persuasion came almost entirely from scope (world vs. one region), framing (headline and title wording), and emphasis (which number is largest and most saturated). Building the "for" chart was straightforward because the global trend is dramatic; the "against" chart was harder because we had to resist techniques like truncating the axis, which would have exaggerated the stagnation but been easy to catch.</p>
-                <p>We were surprised by how much a single choice of aggregation changed the conclusion. The global average is pulled down sharply by East Asia, while Sub-Saharan Africa declined slowly enough that the number of people in extreme poverty there barely fell. Neither chart is false, yet a reader who sees only one walks away with a very different belief about the world.</p>
-                <p>We now think of ethical visualization as being transparent about the choices that shape the conclusion, not just avoiding false numbers. A persuasive choice is acceptable when a reader could discover it from the chart itself (labeled region, labeled threshold, clear source) and would still find the claim reasonable. It becomes misleading when the choice is hidden or when it implies a broader claim than the data supports, for example presenting one region as "the world" or quietly switching poverty lines. The boundary is blurry, which is why disclosure matters more than any single rule.</p>
+                <p>These two visualizations support opposing impressions without changing the underlying poverty measure. Visualization 1 follows the global rate over time and makes its fall—from 42.7% to 9.3%—the central story. Visualization 4 instead compares selected regional endpoints: it shows real declines, but directs attention to Sub-Saharan Africa’s still-high 41.2% rate and to the difference between that region and the global reference. The contrast comes from scope and time framing, not from a different poverty threshold.</p>
+                <p>The choices that make each chart persuasive also define its limits. A global average can conceal who is being left behind, and a pair of endpoints cannot show the pace or fluctuations between them. Conversely, the “single digits” milestone in the global chart is memorable but arbitrary; falling below 10% does not mean extreme poverty is solved. The regional chart also has an explicit gap: South Asia has no 2017 value in this dataset.</p>
+                <p>We learned that ethical visualization requires more than accurate marks: it requires making the scope, definitions, and omissions legible. Both charts identify the $1.90/day line and their populations and periods, and both use zero-based scales. Still, their headlines and selection choices invite different conclusions. We would pair either framing with the other and explain the limits, so readers can distinguish substantial global progress from the fact that progress has been uneven and severe poverty remains.</p>
             </section>
         </main>
-    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c822b88e119346678db149ed7b7721c9","r":1,"spa":2}' crossorigin="anonymous"></script>
-</body>
+    </body>
 </html>
